@@ -1,27 +1,53 @@
-//4. switch문
-var digit = parseInt(prompt("숫자 입력:"));
-switch(digit){
-    case 0:
-        document.write("Zero");
-        break;
-   case 1:
-        document.write("One");
+// 6. break와 continue
+//for (var i = 1; i <= 100; i++){
+//    document.write(i);
+//
+//    if (i ==20){
+//        break;
+//    }
+//
+//    document.write(i + "<br/>");
+//}
+for (var j = 1; j <= 100; j++){
+    if(j<=20){
+        continue;
+    } // 이 조건 만족할 때 루프를 빠져나감 따라서 아래 write 실행 x
+    document.write(j + "<br/>");
+} // 21~100 출력
+// 5. do while
 
-    case 2:
-        document.write("Two");
-        break;
+//var i = 1
+//do {
+//    document.write(i);
+//    document.write(i++ );
+//    document.write(i +  "<br/>");
+//} while (i <=10)
+// 10 10 11 출력 되고 정지됨
 
-// Or 조건으로 사용됨
-    case 3:
-    case 4:
-        document.write("Three or Four");
-        break;
-
-   default:
-        document.write("Else");
-        break;
-
-}
+////4. switch문
+//var digit = parseInt(prompt("숫자 입력:"));
+//switch(digit){
+//    case 0:
+//        document.write("Zero");
+//        break;
+//   case 1:
+//        document.write("One");
+//
+//    case 2:
+//        document.write("Two");
+//        break;
+//
+//// Or 조건으로 사용됨
+//    case 3:
+//    case 4:
+//        document.write("Three or Four");
+//        break;
+//
+//   default:
+//        document.write("Else");
+//        break;
+//
+//}
 
     // case 1 일때 break 없음
     // -> 0 입력 시 zero 만 출력
