@@ -1,3 +1,51 @@
+//8. 배열
+var names = new Array(20);
+names[0] = '하나'
+names[1] = '두리'
+names[2] = '세찌'
+
+for (var i = 0 ; i <= 10 ; i++){
+document.write(names[i], i + "<br/>");
+}
+
+var students = ["One","Two","Three","Four"];
+console.log(students);
+console.log(students[0]); // One
+console.log(students.length); //4
+students.push("Five");
+console.log(students); //  ["One","Two","Three","Four","Five"]
+console.log(students.pop()); // Five
+console.log(students); //  ["One","Two","Three","Four"]
+console.log(students.pop("Two")); // Four 파라미터와 관계없이 마지막 값
+console.log(students); //  ["One","Two","Three"]
+// 특정 위치에 값 넣는 함수 splice
+console.log(students.splice(1,0,"추가된 사람"), students) ; // 첫번째 자리에, 지우지않고 (0) 한칸씩 밀고 추가
+
+
+// 배열 연결
+ var numA1 = [10,20];
+ var numA2 = [40,50,60];
+ var  numA = numA1.concat(numA2);
+ console.log(numA ); // [10,20,40,50,60]
+  console.log(numA1 + numA2 ); // 10,2040,50,60
+
+
+//7. 함수
+//function welcomeMessage(name){
+//    document.write("hi"+name);
+//}
+//var name = prompt("Enter your name");
+//welcomeMessage(name);
+
+// 실행과 동시에 함수가 작동
+//(function addNumbers(a,b) {
+//    console.log(a+b);
+//})(3,10);
+//
+//(function display(mes){
+//    console.log(mes + "hi");
+//})("hana");
+
 // 6. break와 continue
 //for (var i = 1; i <= 100; i++){
 //    document.write(i);
@@ -8,12 +56,12 @@
 //
 //    document.write(i + "<br/>");
 //}
-for (var j = 1; j <= 100; j++){
-    if(j<=20){
-        continue;
-    } // 이 조건 만족할 때 루프를 빠져나감 따라서 아래 write 실행 x
-    document.write(j + "<br/>");
-} // 21~100 출력
+//for (var j = 1; j <= 100; j++){
+//    if(j<=20){
+//        continue;
+//    } // 이 조건 만족할 때 루프를 빠져나감 따라서 아래 write 실행 x
+//    document.write(j + "<br/>");
+//} // 21~100 출력
 // 5. do while
 
 //var i = 1
