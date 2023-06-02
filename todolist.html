@@ -72,12 +72,16 @@
          <!-- 전역변수로 설정 -->
          todoArray = [] ;
          list = document.getElementById('todolist');
-
          var localTodo = localStorage.getItem('todo');
-         todoArray = JSON.parse(localTodo); <!-- 로컬에 저장된 값으로 배열 초기화 -->
 
+         <!-- 로컬에 저장된 값이 있을 경우, 저장된 값으로 배열 초기화-->
+         if (localTodo !== null){
+         todoArray = JSON.parse(localTodo);
+         }
+
+         <!-- 로컬에 저장된 값으로 화면에 그려주기 -->
          for(var i=0; i<todoArray.length; i++ ) {
-            createList(todoArray[i]); <!-- 로컬에 저장된 값으로 화면에 그려주기 -->
+            createList(todoArray[i]);
          }
    }
 
@@ -85,9 +89,11 @@
     function addTodo() {
         <!-- 입력값 받아오기 -->
         var t= document.getElementById('addText').value;
-        createList(t); <!-- 입력값으로 화면에 그려주기 -->
-        todoArray.push(t); <!-- 배열에 추가 -->
-        saveLocal(); <!-- 로컬에 저장 -->
+        createList(t);
+
+        <!-- 배열, 로컬에 저장 -->
+        todoArray.push(t);
+        saveLocal();
     }
 
     <!--함수2. todo 리스트 화면에 그려주는 함수 -->
@@ -109,11 +115,11 @@
     <!-- 함수3. 삭제 버튼 클릭 -->
     function removeTodo(){
         <!-- 화면의 리스트에서 삭제 -->
-       list.removeChild(this.parentNode); <!-- 리스트에서 클릭한 항목 삭제 -->
+       list.removeChild(this.parentNode);
 
        <!-- 배열에서 삭제 -->
-       var t = this.parentNode.textContent; <!-- 삭제 누른 텍스트 -->
-       t=t.substr(0,t.length-2); <!-- 오른쪽에 붙는 삭제 제외한 텍스트만 추출 -->
+       var t = this.parentNode.textContent;
+       t=t.substr(0,t.length-2);
        for (var i =0; i< todoArray.length; i++){
         if (todoArray[i] == t) {
             todoArray.splice(i,1);
@@ -125,9 +131,9 @@
 
     <!-- 함수4. 전체 삭제 버튼 클릭 -->
     function clearTodo(){
-        list.remove(); <!-- 화면의 리스트에서 삭제 -->
-        todoArray.length = 0; <!-- 배열 초기화 -->
-        saveLocal() <!-- 로컬에 반영 -->
+        list.remove();
+        todoArray.length = 0;
+        saveLocal()
     }
 
     <!-- 함수5. 로컬에 저장 -->
