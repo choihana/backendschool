@@ -1,79 +1,32 @@
-# # while
-# i = 0
-# while i<10:
-#     i+=1
-#     print(i)
-# else:
-#     print("end")
-#
-# a = 2
-# while a <= 20:
-#     print(a)
-#     a += 2
-# print("코드종료")
-#
-# i=0
-# while True:
-#     i += 1
-#     print(i)
-#     if i == 5:
-#         break
+def disp():
+    name = 'hana'
+    print('welcome', name)
 
-# for문
-# for i in range(-1,-10,-2):
-#     print(i)
-#
-# r = range(5,0,-1)
-# print(r[0])
-# print(r[1])
-# print(r[2])
-# print(r[3])
-# print(r[4])
-#
+disp()
 
-# st = "멋쟁이사자"
-# for ch in st:
-#     print(ch)
-# else:
-#     print("end")
+def add():
+    x=10;
+    y = 20;
+    c = x+y
+    print(c)
+add()
 
-# pass 문
-# a = 0
-# if a < 1:
-#     pass
-# else:
-#     print("else")
+def add2():
+    a = 10
+    b = 5
+    c = a+b
+    return a,b,c
 
-#배열
-import array
-stu_roll = array.array('i',[101,102,103,104,105])
-print(stu_roll[0], stu_roll[4])
+s1,s2,s3 = add2()
+print(s1,s2,s3)
 
-for element in stu_roll:
-    print(element, end=' ' )
+def disp(sh):
+    print("sh")
+    return sh
 
-stu_roll.insert(1, 106)
-stu_roll.insert(3,107)
-print('\n')
-print(stu_roll)
-i =0
-n = len(stu_roll)
-while i < n:
-    print(stu_roll[i], end = '')
-    i+=1
+def show():
+    return "show"
 
-stu_roll.remove(107)
-print(stu_roll, len(stu_roll))
-
-stu_roll.pop()
-print(stu_roll, len(stu_roll))
-
-print(stu_roll,stu_roll.pop(2))
-print(stu_roll.index(104))
-#extend
-stu_roll2 = array.array('i',[201,202,203])
-stu_roll.extend(stu_roll2)
-print(stu_roll)
-#reverse
-stu_roll.reverse()
-print(stu_roll)
+r_sh = disp(show)
+print(r_sh())
+print(show())
