@@ -1,32 +1,30 @@
-def disp():
-    name = 'hana'
-    print('welcome', name)
+def pw(x, y):
+    z = x ** y
+    print(z)
 
-disp()
 
-def add():
-    x=10;
-    y = 20;
-    c = x+y
-    print(c)
-add()
+pw(2, 5)
 
-def add2():
-    a = 10
-    b = 5
-    c = a+b
-    return a,b,c
 
-s1,s2,s3 = add2()
-print(s1,s2,s3)
+def show(name, age):
+    print(f"Name: {name}  Age : {age}")
 
-def disp(sh):
-    print("sh")
-    return sh
 
-def show():
-    return "show"
+show("hana", 31)
+show(age=29, name="hana2")  # keyword적을경우 순서 변경 가능
 
-r_sh = disp(show)
-print(r_sh())
-print(show())
+
+def add(*num):
+    z = num[0] + num[1] + num[2]
+    print(z)
+
+
+add(5, 2, 4)
+
+
+def add2(x, *num):
+    print(x, num[0], num[2], num[1])
+
+
+add2(1, 10, 20, 30)
+
