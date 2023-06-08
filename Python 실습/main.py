@@ -1,11 +1,12 @@
-fruits = ["apple","banana","cherry","orange"]
-print("첫 리스트:",fruits)
-fruits.append("grape")
-print("append: ",fruits)
-fruits.insert(2, "kiwi")
-print("insert kiwi: ",fruits)
-print("pop: ",fruits.pop(), fruits)
-fruits.insert(1,"cherry")
-print("insert cherry: ",fruits)
-fruits.remove("cherry")
-print("remove cherry: ",fruits) #첫번째만 지움
+def generate_alphabet(start_letter, end_letter):
+    start = ord(start_letter)
+    end = ord(end_letter)
+    while start <= end:
+        yield chr(start)
+        start +=1
+
+runner = generate_alphabet('A','F')
+
+for letter in runner:
+    print(letter)
+
