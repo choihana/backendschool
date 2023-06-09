@@ -1,31 +1,22 @@
-class ParentClass:
-    def __init__(self):
-        self.name = 'parent'
-        self.number = 10
-    def __str__(self):
-        return f'ParentClass name:{self.name}, number: {self.number}'
+# # read
+# t = open('../example.txt','r')
+# content = t.read()
+# print(content)
+# t.close()
+#
+# # write
+# t = open('../example.txt','w')
+# content = "그래 안녕!"
+# t.write(content)
+# t.close()
 
-    def add_num(self, new_number):
-        self.number = self.number + new_number
+t = open("../example.txt","w")
+con_list = ['a','b','c']
+for i in con_list:
+    t.write(i)
 
-class ChildClass(ParentClass):
-    def __init__(self):
-        super().__init__()
-        self.name = 'child'
-        self.age = 5
-    def __str__(self):
-        return f'ChildClass name:{self.name}, number:{self.number}, age{self.age}'
-
-    def add_num(self, new_number):
-        self.number = new_number
-
-parent = ParentClass()
-print(parent)
-child = ChildClass()
-print(child)
-
-parent.add_num(7)
-child.add_num(5)
-
-print(parent.number)
-print(child.number)
+t.close()
+t = open("../example.txt","r")
+con = t.read()
+print(con)
+t.close()
