@@ -1,24 +1,16 @@
-class Mobile:
-    fp = "yes"
+class Vector:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
 
-realme = Mobile()
-redme = Mobile()
-geek = Mobile()
+    def __str__(self):
+        return f'Vector({self.x}, {self.y})'
 
-print("1",Mobile.fp)
-print("1",realme.fp)
-print("1",redme.fp)
-print("1",geek.fp)
-
-Mobile.fp = "no"
-print("2",Mobile.fp)
-print("2",realme.fp)
-print("2",redme.fp)
-print("2",geek.fp)
-
-realme.fp = "Not Working"
-print("3",Mobile.fp)
-print("3",realme.fp)
-print("3",redme.fp)
-print("3",geek.fp)
-
+a = Vector(1,2)
+b = Vector(3,4)
+print(a)
+print(b)
+c = a+b
+print(c›)
