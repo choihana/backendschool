@@ -1,16 +1,31 @@
-class Vector:
-    def __init__(self,x,y):
-        self.x = x
-        self.y = y
-    def __add__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
-
+class ParentClass:
+    def __init__(self):
+        self.name = 'parent'
+        self.number = 10
     def __str__(self):
-        return f'Vector({self.x}, {self.y})'
+        return f'ParentClass name:{self.name}, number: {self.number}'
 
-a = Vector(1,2)
-b = Vector(3,4)
-print(a)
-print(b)
-c = a+b
-print(c›)
+    def add_num(self, new_number):
+        self.number = self.number + new_number
+
+class ChildClass(ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.name = 'child'
+        self.age = 5
+    def __str__(self):
+        return f'ChildClass name:{self.name}, number:{self.number}, age{self.age}'
+
+    def add_num(self, new_number):
+        self.number = new_number
+
+parent = ParentClass()
+print(parent)
+child = ChildClass()
+print(child)
+
+parent.add_num(7)
+child.add_num(5)
+
+print(parent.number)
+print(child.number)
