@@ -1,22 +1,16 @@
-# # read
-# t = open('../example.txt','r')
-# content = t.read()
-# print(content)
-# t.close()
-#
-# # write
-# t = open('../example.txt','w')
-# content = "그래 안녕!"
-# t.write(content)
-# t.close()
+# 다중상속 실습
+class Engine:
+    def start(self):
+        return "Engine started"
+    def stop(self):
+        return "Engine stopped"
 
-t = open("../example.txt","w")
-con_list = ['a','b','c']
-for i in con_list:
-    t.write(i)
+class Wheels:
+    def rotate(self):
+        return "Wheels are  rotating"
 
-t.close()
-t = open("../example.txt","r")
-con = t.read()
-print(con)
-t.close()
+class Car(Engine, Wheels):
+    pass
+my_car = Car()
+print(my_car.start())
+print(my_car.rotate())
