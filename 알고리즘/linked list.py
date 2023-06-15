@@ -1,22 +1,38 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
+class ListNode:
+    def __init__(self, value):
+        self.value = value
         self.next = None
 
-head = Node(1)
-head.next = Node(74)
-head.next.next = Node(30)
 
-# 리스트 출력 1. 반복문
-while head != None:
-    print(head.data)
-    head = head.next
+class Stack:
+    def __init__(self):
+        self.head = None
+        self.size = 0
 
-# 리스트 출력2. 재귀호출
-def printNodesRecur(node):
-    print("째귀",node.data)
-    if node.next is not None:
-        printNodesRecur(node.next)
+    def is_empty(self):
+        return self.size == 0
 
-printNodesRecur(head)
+    def push(self, value):
+        new_node = ListNode(value)
+        new_node.next = self.head
+        self.head = new_node
+        self.size += 1
 
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("pop from an empty stack")
+        value = self.head.value
+        self.head = self.head.next
+        self.size -= 1
+        return value
+
+
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.push(5)
+
+for _ in range(5):
+    print(stack.pop())
