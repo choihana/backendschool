@@ -6,3 +6,4 @@
 - 6/7: 파이썬 기초 문법 (if,for,while, array)
 - 6/8: 파이썬 기초 문법 (list,tuple, set)
 - 6/9: 파이썬 기초 문법 (class)
+- 6/20: django
