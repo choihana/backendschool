@@ -9,6 +9,7 @@
 
 <body>
     {% if latest_question_list %}
+    <h1>{{value|lower}}</h1>
         <ul>
             {% for question in latest_question_list %}
                 <li>
@@ -17,6 +18,7 @@
                 </li>
             {% endfor %}
         </ul>
+
 
     {% else %}
         <h1> 투표가 없습니다. </h1>
