@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'books.apps.BooksConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -58,8 +59,11 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'polls/templates/polls'
+        "DIRS": [
+            'polls/templates/polls',
+            'books/templates/books',
+            'blog/templates/blog',
+            'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
